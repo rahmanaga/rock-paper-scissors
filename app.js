@@ -1,34 +1,59 @@
 //write a function named getComputerChoice that randomly choose among three choices
-
-//create variable computerChoice
-
-//Create a list from three choices and store it in new variable named choices
-
-// Generate a random number between zero and two(inclusively) and store it in randomNum variable
-
-//Use randomNum to choose randomly among choices using bracket notation and store the value in computerChoice
-
-//Return computerChoice from function
+function getComputerChoice() {
+  //create variable computerChoice
+  let computerChoice;
+  //Create a list from three choices and store it in new variable named choices
+  const choices = ["rock", "scissors", "paper"];
+  // Generate a random number between zero and two(inclusively) and store it in randomNum variable
+  let randomNum = Math.floor(Math.random() * 3);
+  //Use randomNum to choose among choices using bracket notation and store the value in computerChoice
+  computerChoice = choices[randomNum];
+  //Return computerChoice from function
+  return computerChoice;
+}
 
 //Write function named findWinner that takes two parameters(playerChoice , computerChoice)
 // and checks if there is a winner or it is a tie
-
-//If playerChoice is equal to computerChoice then it is a tie and return 1
-
-//Else if playerChoice is equal to rock then if computerChoice is to equal to the scissors then
-//"Player won the round" and return 0
-
-////Else if computerChoice is equal to paper then "Computer won this round" and return 2
-
-//Else if playerChoice is equal to scissors then if computerChoice is to equal to the paper then
-// "Player won the round" and return 0
-
-////Else if computerChoice is equal to rock then "Computer won this round" and return 2
-
-//Else if playerChoice is equal to else(paper) then if computerChoice is to equal to the rock then
-// "Player won the round" and return 0
-
-////Else if computerChoice is equal to scissors then "Computer won this round" and return 2
+function findWinner(playerChoice, computerChoice) {
+  //If playerChoice is equal to computerChoice then display "It is a tie"
+  if (playerChoice === computerChoice) {
+    console.log("It's a tie");
+    return;
+  } else if (playerChoice === "rock") {
+    //if playerChoice is equal to rock then if computerChoice is to equal to the scissors then
+    //display "Player won the round" and return 0
+    if (computerChoice === "scissors") {
+      console.log("Player won the round");
+      return 0;
+    } else if (computerChoice === "paper") {
+      ////else if computerChoice is equal to paper then display "Computer won this round" and return 1
+      console.log("Computer won the round");
+      return 1;
+    }
+  } else if (playerChoice === "scissors") {
+    //else if playerChoice is equal to scissors then if computerChoice is to equal to the paper then
+    // "Player won the round" and return 0
+    if (computerChoice === "paper") {
+      console.log("Player won the round");
+      return 0;
+    } else if (computerChoice === "rock") {
+      ////Else if computerChoice is equal to rock then "Computer won this round" and return 1
+      console.log("Computer won the round");
+      return 1;
+    }
+  } else if (playerChoice === "paper") {
+    // if playerChoice is equal to else(paper) then if computerChoice is to equal to the rock then
+    // display "Player won the round" and return 0
+    if (computerChoice === "rock") {
+      console.log("Player won the round");
+      return 0;
+    } else if (computerChoice === "scissors") {
+      ////Else if computerChoice is equal to scissors then  "Computer won this round" and return 2
+      console.log("Computer won the round");
+      return 1;
+    }
+  }
+}
 
 //Create function named playGame
 
