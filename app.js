@@ -56,25 +56,41 @@ function findWinner(playerChoice, computerChoice) {
 }
 
 //Create function named playGame
-
-//Create playerScore and computerScore variables and initialize them with value of 0
-
-// create variable computerChoice
-
-//create variable playerChoice
-
-//Write for loop to play five round of game
-
-//Call getComputerChoice function and store the value in computerChoice variable
-
-//Ask what they want to choose among three choices and store it in playerChoice variable
-
-// Call findWinner function with two parameters(playerChoice,computerChoice)
-//and if returned value is equal to 0 then add one to playerScore ,else if value is equal to the 2 then
-// add one to the computerScore
-
-//After loop finished check if playerScore is greater than computerScore then display
-// "Player won the game" else if compChoice is greater then display "Computer won the game"
-//else display "DRAW!"
+function playGame() {
+  //Create playerScore and computerScore variables and initialize them with value of 0
+  let playerScore = 0,
+    computerScore = 0;
+  // create variable computerChoice and playerChoice
+  let computerChoice, playerChoice;
+  //Write for loop to play five round of game
+  for (let i = 0; i < 5; i++) {
+    //Call getComputerChoice function and store the value in computerChoice variable
+    computerChoice = getComputerChoice();
+    //Ask what they want to choose among three choices and store it in playerChoice variable
+    playerChoice = prompt(
+      "Choose your weapon(rock, scissors or paper)"
+    ).toLowerCase();
+    // Call findWinner function with two parameters(playerChoice,computerChoice) and store value in result
+    //and if returned value is equal to 0 then add one to playerScore ,else if value is equal to the 21then
+    // add one to the computerScore
+    let result = findWinner(playerChoice, computerChoice);
+    if (result === 0) {
+      playerScore++;
+    } else if (result === 1) {
+      computerScore++;
+    }
+  }
+  //After loop finished check if playerScore is greater than computerScore then display
+  // "Player won the game" else if compChoice is greater then display "Computer won the game"
+  //else display "DRAW!" and display scores
+  if (playerScore > computerScore) {
+    console.log("Player won the game! " + playerScore + "-" + computerScore);
+  } else if (computerScore > playerScore) {
+    console.log("Computer won the game! " + playerScore + "-" + computerScore);
+  } else {
+    console.log("DRAW! " + playerScore + "-" + computerScore);
+  }
+}
 
 //Call the playGame function
+playGame();
