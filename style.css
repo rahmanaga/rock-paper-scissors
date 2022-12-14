@@ -16,8 +16,21 @@ body {
 .container {
   width: 70%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button-container {
+  width: 100%;
+  display: flex;
   justify-content: center;
   gap: 15px;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 50px;
 }
 
 .choice {
@@ -45,7 +58,7 @@ body {
   }
 }
 @media (max-width: 555px) {
-  .container {
+  .button-container {
     flex-direction: column;
     align-items: center;
   }
