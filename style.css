@@ -30,11 +30,13 @@ body {
   border-radius: 10px;
   border-color: #1c315e;
   text-align: center;
+  transition: 0.07s ease-in;
 }
 
 .choice:hover {
   background-color: #1c315e;
   color: #fcffe7;
+  transform: scale(1.1);
 }
 
 @media (max-width: 888px) {
